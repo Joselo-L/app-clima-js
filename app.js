@@ -3,8 +3,7 @@ async function getWeather(){
     const apiKey = "d5e15d72341db0c1c31ff44a835eecb4";
 
     try{
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},CO&appid=${apiKey}&units=metric&lang=es`;
         const response = await fetch(url);
         const data = await response.json();
 
