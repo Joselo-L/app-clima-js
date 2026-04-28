@@ -1,9 +1,13 @@
+const apiKey = "d5e15d72341db0c1c31ff44a835eecb4";
+
+document.getElementById("searchBtn").addEventListener("click", getWeather);
+
 async function getWeather(){
     const city = document.getElementById("cityInput").value;
-    const apiKey = "d5e15d72341db0c1c31ff44a835eecb4";
+
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=es`;
 
     try{
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},CO&appid=${apiKey}&units=metric&lang=es`;
         const response = await fetch(url);
         const data = await response.json();
 
