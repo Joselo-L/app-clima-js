@@ -5,7 +5,7 @@ document.getElementById("searchBtn").addEventListener("click", async () => {
 
     try{
         // 1️⃣ Buscar coordenadas de la ciudad
-        const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`;
+        const geoUrl = `https://api.allorigins.win/raw?url=https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`;
         const geoResponse = await fetch(geoUrl);
         const geoData = await geoResponse.json();
 
@@ -18,7 +18,7 @@ document.getElementById("searchBtn").addEventListener("click", async () => {
         const lon = geoData[0].lon;
 
         // 2️⃣ Consultar clima por coordenadas
-        const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=es`;
+       const weatherUrl = `https://api.allorigins.win/raw?url=https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=es`;
         const weatherResponse = await fetch(weatherUrl);
         const data = await weatherResponse.json();
 
